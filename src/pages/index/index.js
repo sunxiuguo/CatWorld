@@ -1,11 +1,20 @@
 import Taro, { Component } from '@tarojs/taro'
 import { View, Button, Text } from '@tarojs/components'
+import { AtTabBar, AtTabs, AtTabsPane } from 'taro-ui'
 import { connect } from '@tarojs/redux'
+import Community from '../community/index'
+import Keeppet from '../keeppet/index'
+import Usercenter from '../usercenter/index'
 
 import { add, minus, asyncAdd } from '../../actions/counter'
 
 import './index.less'
 
+const route = [
+    '/pages/index/index',
+    '/pages/keeppet/index',
+    '/pages/usercenter/index',
+]
 
 @connect(({ counter }) => ({
   counter
@@ -20,33 +29,44 @@ import './index.less'
     dispatch(asyncAdd())
   }
 }))
-class Index extends Component {
+export default class Index extends Component {
+
+    state = {
+        current: 0,
+    }
 
     config = {
-    navigationBarTitleText: '首页'
-  }
+        navigationBarTitleText: '爱猫之城',
+    }
 
-  componentWillReceiveProps (nextProps) {
-    console.log(this.props, nextProps)
-  }
+    componentWillReceiveProps (nextProps) {
+        console.log(this.props, nextProps)
+    }
 
-  componentWillUnmount () { }
+    onClickTabBar = (index) => {
+        this.setState({
+            current: index,
+        })
+    }
 
-  componentDidShow () { }
-
-  componentDidHide () { }
-
-  render () {
-    return (
-      <View className='index'>
-        <Button className='add_btn' onClick={this.props.add}>+</Button>
-        <Button className='dec_btn' onClick={this.props.dec}>-</Button>
-        <Button className='dec_btn' onClick={this.props.asyncAdd}>async</Button>
-        <View><Text>{this.props.counter.num}</Text></View>
-        <View><Text>Hello, World</Text></View>
-      </View>
-    )
-  }
+    render () {
+        return (
+        <View className='index'>
+            {
+                this.state.current === 0 ? <Community/> :
+                this.state.current === 1 ? <Keeppet/> : <Usercenter/>
+            }
+            <AtTabBar
+                fixed
+                tabList={[
+                    { title: '社区', iconType: 'home', text: 'new' },
+                    { title: '养宠', iconType: 'shopping-bag-2' },
+                    { title: '我的', iconType: 'user', text: '100', max: '99' }
+                ]}
+                onClick={this.onClickTabBar}
+                current={this.state.current}
+            />
+        </View>
+        )
+    }
 }
-
-export default Index
