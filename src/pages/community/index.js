@@ -1,6 +1,6 @@
 import Taro, { Component } from '@tarojs/taro'
-import { View, Button, Text } from '@tarojs/components'
-import { AtTabBar, AtTabs, AtTabsPane } from 'taro-ui'
+import { View } from '@tarojs/components'
+import { AtNavBar } from 'taro-ui'
 import { connect } from '@tarojs/redux'
 
 import { add, minus, asyncAdd } from '../../actions/counter'
@@ -43,7 +43,7 @@ export default class Community extends Component {
     render () {
         return (
         <View className='index'>
-            社区
+
         </View>
         )
     }

@@ -7,6 +7,7 @@ import Index from './pages/index'
 import configStore from './store'
 
 import './app.less'
+import './assets/icon.less'  // 引入第三方图标
 
 const store = configStore()
 
