@@ -1,5 +1,5 @@
 import Taro, { Component } from '@tarojs/taro'
-import { View, Button, Text } from '@tarojs/components'
+import { View } from '@tarojs/components'
 import { AtTabBar, AtTabs, AtTabsPane, AtIcon } from 'taro-ui'
 import { connect } from '@tarojs/redux'
 import Community from '../community/index'
@@ -66,7 +66,8 @@ export default class Index extends Component {
                 onClick={this.onClickTabBar}
                 current={this.state.current}
             />
-            <AtIcon prefixClass='fa' value='plus' size='100' color='#F00'></AtIcon>
+            <AtIcon prefixClass='fa' value='plus' size='30' color='#F00'></AtIcon>
+            <View className="icon_plus"></View>
         </View>
         )
     }

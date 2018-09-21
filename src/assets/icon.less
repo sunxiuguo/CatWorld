@@ -1,32 +1,48 @@
 /*
- *  定义第三方图标 失败了
+ *  定义第三方图标
 */
+
+// region 对号
 @font-face {
-    font-family: 'iconfont';
-    /* 自行安装第三方字体图标库 */
-    src: url('./assets/fonts/fontawesome-webfont.eot?v=4.7.0');
-    src: url('./assets/fonts/fontawesome-webfont.woff2?v=4.7.0') format('woff2'), url('./assets/fonts/fontawesome-webfont.woff?v=4.7.0') format('woff'), url('./assets/fonts/fontawesome-webfont.ttf?v=4.7.0') format('truetype');
+    font-family: 'FontAwesome';
+    src: url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/fonts/fontawesome-webfont.eot');
+    src: url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/fonts/fontawesome-webfont.woff2') format('woff2'), url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/fonts/fontawesome-webfont.woff') format('woff'), url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/fonts/fontawesome-webfont.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
   }
 
 .fa {
-    display:inline-block;
-    font-family:iconfont;
-    font-style:normal;
-    font-weight:400;
-    font-variant:normal;
-    text-transform:none;
-    text-rendering:auto;
-    line-height:1;
-    -webkit-font-smoothing:antialiased;
-    vertical-align:middle;
-}
-// 加号
-.fa-plus {
     display: inline-block;
-    // width: 50px;
-    // height: 50px;
-    // background-size: 30px 30px;
-    background: url(./icon/plus.png) no-repeat;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
+.fa-check:before {
+    content: '\f00c'
+}
+// endregion
+
+// region 加号
+@font-face {
+    font-family: 'iconPlus';  /* project id 847043 */
+    src: url('//at.alicdn.com/t/font_847043_vb1rt81f4t.eot');
+    src: url('//at.alicdn.com/t/font_847043_vb1rt81f4t.eot?#iefix') format('embedded-opentype'),
+    url('//at.alicdn.com/t/font_847043_vb1rt81f4t.woff') format('woff'),
+    url('//at.alicdn.com/t/font_847043_vb1rt81f4t.ttf') format('truetype'),
+    url('//at.alicdn.com/t/font_847043_vb1rt81f4t.svg#iconfont') format('svg');
+  }
+
+.fa {
+    display: inline-block;
+    font: normal normal normal 14px/1 iconPlus;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.fa-plus::before {
+    content: '\e60d'
+}
+// endregion
