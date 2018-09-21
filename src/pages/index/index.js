@@ -66,8 +66,10 @@ export default class Index extends Component {
                 onClick={this.onClickTabBar}
                 current={this.state.current}
             />
-            <AtIcon prefixClass='fa' value='plus' size='30' color='#F00'></AtIcon>
-            <View className="icon_plus"></View>
+
+            <View className="icon_plus">
+                <AtIcon prefixClass='fa' value='plus' size='30' color='#f4ea2a'></AtIcon>
+            </View>
         </View>
         )
     }
