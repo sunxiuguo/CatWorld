@@ -1,6 +1,7 @@
 import Taro, { Component } from '@tarojs/taro'
 import { View } from '@tarojs/components'
 import { AtTabBar, AtTabs, AtTabsPane, AtIcon } from 'taro-ui'
+import { Menu, Item } from '../../components/GooeyMenu/index';
 import { connect } from '@tarojs/redux'
 import Community from '../community/index'
 import Keeppet from '../keeppet/index'
@@ -66,10 +67,20 @@ export default class Index extends Component {
                 onClick={this.onClickTabBar}
                 current={this.state.current}
             />
+            <Menu orientation="bottom">
+                <Item title="Cool!">😎</Item>
+                <Item
+                    title="Kitty"
+                    componentProps={{ onClick: () => console.log("Meow!") }}
+                >
+                😸
+                </Item>
+            </Menu>
 
-            <View className="icon_plus">
+            {/* <View className="icon_plus">
                 <AtIcon prefixClass='fa' value='plus' size='30' color='#f4ea2a'></AtIcon>
-            </View>
+            </View> */}
+
         </View>
         )
     }

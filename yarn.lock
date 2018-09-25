@@ -112,6 +112,12 @@
   dependencies:
     less "^3.0.4"
 
+"@tarojs/plugin-sass@^1.0.1":
+  version "1.0.3"
+  resolved "http://registry.npm.taobao.org/@tarojs/plugin-sass/download/@tarojs/plugin-sass-1.0.3.tgz#4a8e69332efc4279ff4c0c54a88c342b63dbb8d1"
+  dependencies:
+    node-sass "^4.8.3"
+
 "@tarojs/plugin-uglifyjs@^1.0.1":
   version "1.0.1"
   resolved "http://registry.npm.taobao.org/@tarojs/plugin-uglifyjs/download/@tarojs/plugin-uglifyjs-1.0.1.tgz#d3dc3acdbbc2ee2fb60118c30c31808e68273d17"
@@ -4859,6 +4865,10 @@ rc@^1.2.7:
     ini "~1.3.0"
     minimist "^1.2.0"
     strip-json-comments "~2.0.1"
+
+react-gooey-nav@^2.0.0:
+  version "2.0.0"
+  resolved "http://registry.npm.taobao.org/react-gooey-nav/download/react-gooey-nav-2.0.0.tgz#ddff19e9b1dfdc7cd14cf2c039376790d4d699c8"
 
 read-pkg-up@^1.0.1:
   version "1.0.1"
