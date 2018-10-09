@@ -1,4 +1,4 @@
-import Menu from "./Menu";
-import Item from "./Item";
+import GooeyMenu from "./Menu";
+import GooeyMenuItem from "./MenuItem";
 
-export { Menu, Item };
+export { GooeyMenu, GooeyMenuItem };

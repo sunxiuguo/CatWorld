@@ -4,32 +4,39 @@ import * as menuItemStyle from "./style/menuItem";
 export default class GooeyNavItem extends Component {
   state = { hovered: false };
 
+  onMouseChange = (isHover) => {
+    this.setState({
+        hovered: isHover,
+    })
+  }
+
   render() {
     const {
       children,
       component: Component = "a",
-      componentProps: { style, ...compProps } = {},
+      componentProps: { style } = {},
+    //   componentProps: { style, ...compProps } = {},
       orientation,
       position: index,
       revealed,
       title
     } = this.props;
     return (
-      <Component
+      <View
         href="#"
         title={title}
-        onMouseEnter={() => this.setState({ hovered: true })}
-        onMouseLeave={() => this.setState({ hovered: false })}
+        onMouseEnter={this.onMouseChange.bind(this, true)}
+        onMouseLeave={this.onMouseChange.bind(this, false)}
         style={{
           ...menuItemStyle.std({ index, orientation }),
           ...(this.state.hovered && menuItemStyle.hover),
           ...(revealed && menuItemStyle.revealed({ index, orientation })),
           ...style
         }}
-        {...compProps}
+        // {...compProps}
       >
         {children}
-      </Component>
+      </View>
     );
   }
 }

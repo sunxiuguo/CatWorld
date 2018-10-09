@@ -1,5 +1,4 @@
 import Taro, { Component } from '@tarojs/taro'
-import ball from "./style/ball";
 
 function hamburger(isOpen, i) {
   var hamburgerSpacing = 8;
@@ -27,14 +26,33 @@ function hamburger(isOpen, i) {
 
 export default class MenuOpenButton extends Component {
   state = { hover: false };
+  onMouseChange = (isHover) => {
+    this.setState({
+        hover: isHover,
+    })
+  }
+
+  onBtnClick = () => {
+    this.props.onOpenChanged(!this.props.open);
+  }
+
   render() {
     return (
-      <a
-        onClick={() => this.props.onOpenChanged(!this.props.open)}
-        onMouseEnter={() => this.setState({ hover: true })}
-        onMouseLeave={() => this.setState({ hover: false })}
+      <View
+        onClick={this.onBtnClick}
+        onMouseEnter={this.onMouseChange.bind(this, true)}
+        onMouseLeave={this.onMouseChange.bind(this, false)}
         style={{
-          ...ball,
+          background: "#ffc107", //this.props.foregroundColor,
+          borderRadius: "100%",
+          width: "80px",
+          height: "80px",
+          display: "block",
+          color: "white",
+          textAlign: "center",
+          lineHeight: "80px",
+          transition: "transform ease-out",
+          margin: 7,
           zIndex: 2,
           transitionTimingFunction: "cubic-bezier(0.175, 0.885, 0.320, 1.275)",
           transitionDuration: "400ms",
@@ -45,9 +63,9 @@ export default class MenuOpenButton extends Component {
         }}
       >
         {[0, 1, 2].map(i => {
-          return <span key={i} style={hamburger(this.props.open, i)} />;
+          return <View key={i} style={hamburger(this.props.open, i)} />;
         })}
-      </a>
+      </View>
     );
   }
 }
