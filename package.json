@@ -11,9 +11,9 @@
 		"build:weapp": "taro build --type weapp",
 		"build:h5": "taro build --type h5",
 		"build:rn": "taro build --type rn",
-		"add-page": "node template"
+		"add": "node template"
 	},
-	"author": "cai.bowen <easytuan@foxmail.com>",
+	"author": "sunxiuguo",
 	"license": "MIT",
 	"dependencies": {
 		"@tarojs/async-await": "1.0.7",

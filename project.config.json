@@ -1,10 +1,10 @@
 {
   "miniprogramRoot": "./dist",
-  "projectname": "taro-msparis",
+  "projectname": "catworld",
   "description": "",
-  "appid": "wxd2a161b3c8752b6f",
+  "appid": "wx2ad67638f15b4b92",
   "setting": {
-    "urlCheck": true,
+    "urlCheck": false,
     "es6": false,
     "postcss": false,
     "minified": false

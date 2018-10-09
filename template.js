@@ -1,5 +1,5 @@
 /**
- * pages模版快速生成脚本,执行命令 npm run tep `文件名`
+ * pages模版快速生成脚本,执行命令 npm run add `文件名`
  */
 
 const fs = require('fs');
