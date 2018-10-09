@@ -1,8 +1,8 @@
 {
   "miniprogramRoot": "./dist",
-  "projectname": "CatWorld",
-  "description": "宠物社区",
-  "appid": "wx2ad67638f15b4b92",
+  "projectname": "taro-msparis",
+  "description": "",
+  "appid": "wxd2a161b3c8752b6f",
   "setting": {
     "urlCheck": true,
     "es6": false,
