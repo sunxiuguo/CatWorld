@@ -22,11 +22,17 @@ class App extends Component {
       'pages/cart/index',
       'pages/user/index',
       'pages/detail/index',
+      'pages/about/index',
+      'pages/size/index',
+      'pages/login/index',
+      'pages/message/index',
+      'pages/couponList/index',
+      'pages/order/index',
     ],
     window: {
       backgroundTextStyle: 'dark',
       navigationBarBackgroundColor: '#fff',
-      navigationBarTitleText: '女装租赁平台',
+      navigationBarTitleText: '时装衣橱',
       navigationBarTextStyle: 'black'
     },
     tabBar: {

@@ -13,13 +13,13 @@ class GoodsList extends Component {
   };
 
   gotoDetail = (e) => {
-    // Taro.navigateTo({
-    //   url: `/pages/detail/index?id=${e.currentTarget.dataset.id}`,
-    // })
+    Taro.navigateTo({
+      url: `/pages/detail/index?id=${e.currentTarget.dataset.id}`,
+    })
   }
 
   render() {
-    const { list } = this.props;
+    const { list, loading } = this.props;
     return (
       <View className="goods-list-container">
         {
@@ -67,6 +67,12 @@ class GoodsList extends Component {
           <View />
         )
       }
+      {loading && (
+        <View className="loadMoreGif">
+          <View className="zan-loading"></View>
+          <View className="text">加载中...</View>
+        </View>
+      )}
       </View>
     );
   }

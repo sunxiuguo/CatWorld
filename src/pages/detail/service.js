@@ -1,9 +1,8 @@
 import Request from '../../utils/request';
 
-export const demo = (data) => {
-  return Request({
-    url: '路径',
-    method: 'POST',
-    data,
-  });
-};
+// 获取商品详情
+export const getProductInfo = params => Request({
+  url: '/product',
+  method: 'GET',
+  data: params,
+});
